@@ -1,7 +1,6 @@
 package com.example.android.app.khayapopularmovies;
 
 import android.net.Uri;
-import android.util.Log;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -15,7 +14,7 @@ import java.util.Scanner;
  */
 
 public class NetworkUtils {
-    private static final String  baseUrl = "http://api.themoviedb.org/3/movie/";
+    private static final String BASE_URL = "http://api.themoviedb.org/3/movie/";
     //TODO SUGGESTION Follow the standard Java Naming Conventions i.e. BASE_URL in this instance
 
     private static final String API_QUERY = "api_key";
@@ -24,7 +23,7 @@ public class NetworkUtils {
     //TODO AWESOME You're keeping your API key out of source code!
 
     public static URL buildUrl(String sortBy){
-        Uri builtUri = Uri.parse(baseUrl).buildUpon()
+        Uri builtUri = Uri.parse(BASE_URL).buildUpon()
                 .appendPath(sortBy)
                 .appendQueryParameter(API_QUERY, API_KEY)
                 .build();
